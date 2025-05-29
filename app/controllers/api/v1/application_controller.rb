@@ -9,7 +9,7 @@ module Api
       private
       def authorize_admin!
         unless current_user&.role == 'admin'
-          render json: { error: 'Unauthorized' }, status: :unauthorized
+          render json: { error: 'Não Autorizado' }, status: :unauthorized
         end
       end
     end

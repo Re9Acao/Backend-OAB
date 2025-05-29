@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
-      mount_devise_token_auth_for 'User', at: 'auth'
+      mount_devise_token_auth_for 'User', at: 'auth', controllers: {
+        registrations: 'api/v1/registrations'
+      }
 
       defaults format: :json do
         resources :evaluations, only: [:index, :show, :create] do
@@ -31,7 +33,7 @@ Rails.application.routes.draw do
           end
         end
 
-        resources :users, only: [:index, :show, :update] do
+        resources :users, only: [:index, :show, :update, :destroy] do
           member do
             get :performance        # GET /users/:id/performance
           end
