@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  chosen_option: 1
+  correct_option: false
+  evaluation: one
+  question: one
+
+two:
+  chosen_option: 1
+  correct_option: false
+  evaluation: two
+  question: two

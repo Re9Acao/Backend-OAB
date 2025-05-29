@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  statement: MyString
+  evaluation_board: MyString
+  year: MyString
+  option_one: MyString
+  option_two: MyString
+  option_three: MyString
+  option_four: MyString
+  option_five: MyString
+  correct_answer: 1
+  available: false
+  law_area: one
+
+two:
+  statement: MyString
+  evaluation_board: MyString
+  year: MyString
+  option_one: MyString
+  option_two: MyString
+  option_three: MyString
+  option_four: MyString
+  option_five: MyString
+  correct_answer: 1
+  available: false
+  law_area: two

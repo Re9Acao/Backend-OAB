@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  evaluation_question: one
+  user: one
+  question_type: 1
+  selected_option: MyString
+  written_answer: MyText
+
+two:
+  evaluation_question: two
+  user: two
+  question_type: 1
+  selected_option: MyString
+  written_answer: MyText

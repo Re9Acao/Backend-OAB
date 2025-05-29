@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  law_area: one
+  evaluation: one
+  question_type: 1
+  correct_count: 1
+  incorrect_count: 1
+  total_questions: 1
+
+two:
+  user: two
+  law_area: two
+  evaluation: two
+  question_type: 1
+  correct_count: 1
+  incorrect_count: 1
+  total_questions: 1
