@@ -2,7 +2,7 @@ class Question < ApplicationRecord
   belongs_to :law_area
   has_one :standard_answer, dependent: :destroy
   has_many :evaluation_questions
-  has_many :
+  has_many :user_answers
   
   enum question_type: {
     objective: 1, 

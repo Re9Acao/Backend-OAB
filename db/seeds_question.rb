@@ -1,4 +1,4 @@
-{
+  {
     #direito eleitoral
     title: "No ano anterior à realização de eleições para cargos eletivos federais e estaduais, os dirigentes dos partidos políticos Alfa e Gama iniciaram tratativas para se aliançarem, tanto nas eleições majoritárias como nas proporcionais, mas havia dúvida em relação ao modelo a ser utilizado. Após consultarem a legislação de regência, concluíram corretamente que deveriam formar  ",
     evaluation_board: "FGV",
@@ -393,3 +393,57 @@
     available: true,
     law_area_id: 8
   }
+
+
+
+  questions = [
+    {
+    title: "Luciane ajuizou ação penal privada contra Jorge por injúria, mas não o encontrou para citação pessoal. Sabe-se que Jorge está temporariamente em outra cidade. Qual o procedimento correto?",
+    evaluation_board: "FGV",
+    year: "2023",
+    option_1: "Citação por seu chefe de serviço via ofício à Guarda Municipal.",
+    option_2: "Citação por hora certa, pois Jorge se ocultou para não ser encontrado.",
+    option_3: "Citação por carta precatória para cidade onde reside temporariamente.",
+    option_4: "Citação por correspondência com AR no novo endereço.",
+    option_5: nil,
+    correct_answer: 2,
+    available: true,
+    question_type: 1,
+    law_area: law_areas["Direito Processual Penal"]
+  }, 
+  {
+    title: "A União publicou edital de licitação, na modalidade concorrência, para obra de infraestrutura de R$300.000.000,00. A empresa Construodetudo S.A. pretende participar, mas tem dúvidas jurídicas. Responda aos questionamentos a seguir.",
+    evaluation_board: "FGV",
+    year: "2023",
+    option_1: "A) O edital em questão deveria contemplar a matriz de alocação de riscos entre contratante e contratado? Justifique. (Valor: 0,65)",
+    option_2: "B) É possível exigir do licitante vencedor a implementação de programa de integridade? Justifique. (Valor: 0,60)\nObs.: o(a) examinando(a) deve fundamentar suas respostas. A mera citação do dispositivo legal não confere pontuação.",
+    option_3: nil,
+    option_4: nil,
+    option_5: nil,
+    correct_answer: nil,
+    available: true,
+    question_type: 2, # discursiva
+    law_area: law_areas["Direito Administrativo"]
+  }, 
+  {
+    title: "A sociedade empresária Alfa foi contratada pelo Estado Beta para prestar serviços de TI sob a nova Lei de Licitações. Durante a execução, o Estado atrasou por 80 dias o pagamento de notas fiscais de serviços já prestados. O contrato não prevê cláusula arbitral. O sócio da empresa procura seu auxílio jurídico para buscar a extinção do contrato. Responda:",
+    evaluation_board: "FGV",
+    year: "2023",
+    option_1: "A) A contratada tem direito à extinção do contrato? Justifique. (Valor: 0,65)",
+    option_2: "B) Caso haja a extinção do contrato em decorrência de culpa exclusiva do Estado Beta, quais os direitos do contratado? Justifique. (Valor: 0,60)\nObs.: o(a) examinando(a) deve fundamentar suas respostas. A mera citação do dispositivo legal não confere pontuação.",
+    option_3: nil,
+    option_4: nil,
+    option_5: nil,
+    correct_answer: nil,
+    available: true,
+    question_type: 2,
+    law_area: law_areas["Direito Administrativo"]
+  }, 
+  
+]
+
+created_questions = questions.map do |question_attrs|
+  Question.find_or_create_by!(title: question_attrs[:title]) do |q|
+    q.assign_attributes(question_attrs)
+  end
+end

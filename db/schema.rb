@@ -79,7 +79,7 @@ ActiveRecord::Schema[7.1].define(version: 2025_05_29_063505) do
   create_table "user_answers", force: :cascade do |t|
     t.bigint "evaluation_question_id", null: false
     t.bigint "user_id", null: false
-    t.integer "question_type"
+    t.integer "question_type", null: false
     t.string "selected_option"
     t.text "written_answer"
     t.datetime "created_at", null: false
