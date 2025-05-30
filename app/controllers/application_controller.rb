@@ -1,5 +1,4 @@
 class ApplicationController < ActionController::API
-  # tratamento genérico de exceções
   rescue_from ActiveRecord::RecordNotFound, with: :not_found
 
   private
