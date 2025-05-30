@@ -27,7 +27,7 @@ Rails.application.routes.draw do
           end
         end
 
-        resources :questions, only: [:index, :show] do
+        resources :questions, only: [:index, :show, :create, :update, :destroy] do
           collection do
             get :random             # GET /questions/random
           end

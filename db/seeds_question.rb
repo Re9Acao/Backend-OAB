@@ -345,30 +345,30 @@
     available: true,
     law_area_id: 7
   },
-  {
-    title: "Em relação ao tratado internacional sobre meio ambiente, qual é o princípio que obriga os países a prevenir a poluição e minimizar os danos ambientais?",
-    evaluation_board: "OAB",
-    year: "2023",
-    option_1: "Princípio da precaução.",
-    option_2: "Princípio da prevenção.",
-    option_3: "Princípio da cooperação internacional.",
-    option_4: "Princípio da responsabilidade por danos transfronteiriços.",
-    correct_answer: 1,
-    available: true,
-    law_area_id: 9
-  },
-  {
-    title: "Qual é a função do Tribunal Superior Eleitoral (TSE)?",
-    evaluation_board: "CESPE",
-    year: "2022",
-    option_1: "Organizar as eleições, apurar os votos e proclamar os resultados.",
-    option_2: "Julgar os recursos eleitorais das instâncias inferiores.",
-    option_3: "Zelar pela observância dos princípios constitucionais nas eleições.",
-    option_4: "Propor novas leis eleitorais ao Congresso Nacional.",
-    correct_answer: 1,
-    available: true,
-    law_area_id: 10
-  },
+  # {
+  #   title: "Em relação ao tratado internacional sobre meio ambiente, qual é o princípio que obriga os países a prevenir a poluição e minimizar os danos ambientais?",
+  #   evaluation_board: "OAB",
+  #   year: "2023",
+  #   option_1: "Princípio da precaução.",
+  #   option_2: "Princípio da prevenção.",
+  #   option_3: "Princípio da cooperação internacional.",
+  #   option_4: "Princípio da responsabilidade por danos transfronteiriços.",
+  #   correct_answer: 1,
+  #   available: true,
+  #   law_area_id: 9
+  # },
+  # {
+  #   title: "Qual é a função do Tribunal Superior Eleitoral (TSE)?",
+  #   evaluation_board: "CESPE",
+  #   year: "2022",
+  #   option_1: "Organizar as eleições, apurar os votos e proclamar os resultados.",
+  #   option_2: "Julgar os recursos eleitorais das instâncias inferiores.",
+  #   option_3: "Zelar pela observância dos princípios constitucionais nas eleições.",
+  #   option_4: "Propor novas leis eleitorais ao Congresso Nacional.",
+  #   correct_answer: 1,
+  #   available: true,
+  #   law_area_id: 10
+  # },
   {
     title: "Em relação à disputa entre países por recursos naturais em zonas oceânicas, qual é o princípio que rege a partilha desses recursos?",
     evaluation_board: "FCC",

@@ -6,23 +6,23 @@ module Api
       end
 
       def create
-        new_crud_instance = Question.create(create_params)
+        question = Question.create(create_params)
           
-        if new_crud_instance.errors.present?
-          render json: new_crud_instance.errors.messages, status: 422
+        if question.errors.present?
+          render json: question.errors.messages, status: :unprocessable_entity
         else
           render json: { 
             message: 'Questão criada com sucesso!', 
-            question: new_crud_instance 
+            question: question 
             }, status: :ok
         end
       end
 
       def update
-        crud_instance_id = params[:id]
-        crud_instance = Question.find_by(id: crud_instance_id)
+        question_id = params[:id]
+        question = Question.find_by(id: question_id)
         
-        if crud_instance.present?
+        if question.present?
           allowed_params = params.permit(
             :title, 
             :evaluation_board, 
@@ -34,16 +34,17 @@ module Api
             :option_5, 
             :correct_answer, 
             :available, 
-            :law_area_id
+            :law_area_id,
+            :question_type
           )
       
-          if crud_instance.update(allowed_params)
+          if question.update(allowed_params)
             render json: { 
             message: 'Questão atualizada com sucesso!', 
-            question: crud_instance 
+            question: question 
             }, status: :ok
           else
-            render json: { errors: crud_instance.errors.full_messages }, status: :unprocessable_entity
+            render json: { errors: question.errors.full_messages }, status: :unprocessable_entity
           end
         else
           render json: { message: 'Questão não encontrada' }, status: :not_found
@@ -53,7 +54,18 @@ module Api
       def create_params
         params.permit([:title, :evaluation_board, :year, :option_1, :option_2, :option_3, :option_4,  :option_5, :correct_answer, :available, :law_area_id])
       end
+      
+      def destroy
+        question_id = params[:id]
+        question = crud_model.find_by(id: question_id)
+        
+        if question.present?
+          question.destroy
+          render json: { message: 'Questão excluída com sucesso' }, status: :ok
+        else
+          render json: { error: 'Questão não encontrada' }, status: :not_found
+        end
+      end
     end
-
   end
 end

@@ -23,6 +23,7 @@ module Api
       end
 
       def destroy
+        Rails.logger.info "Current user: #{current_user.inspect}"
         user = User.find(params[:id])
         user.destroy
         render json: { status: 'Sucesso!', message: 'Usuário excluído' }

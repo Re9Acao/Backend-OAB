@@ -5,6 +5,6 @@ class ApplicationController < ActionController::API
   private
 
   def not_found
-    render json: { error: "Resource not found" }, status: :not_found
+    render json: { error: "Recurso não encontrado" }, status: :not_found
   end
 end
