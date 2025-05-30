@@ -1,19 +1,26 @@
 module Api
   module V1
-    class UsersController < Api::V1::ApplicationController
+    class UsersController <   ApplicationController
       before_action :authenticate_user!
 
-      before_action :authorize_admin!, only: [:index, :destroy]
+      # before_action :authorize_admin!, only: [:index, :destroy]
 
       def index
+        Rails.logger.info "Headers recebidos: #{request.headers.to_h.select { |k,_| k.start_with?('HTTP_') || k == 'Authorization' }}"
+        Rails.logger.info "Current user no index: #{current_user.inspect}"
+
         users = User.all
         render json: users
       end
 
       def show
+        Rails.logger.info "Headers recebidos: #{request.headers.to_h.select { |k,_| k.start_with?('HTTP_') || k == 'Authorization' }}"
+        Rails.logger.info "Current user no show: #{current_user.inspect}"
+
         user = User.find(params[:id])
         render json: user
       end
+
 
       def update
         user = User.find(params[:id])
