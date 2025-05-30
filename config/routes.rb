@@ -27,7 +27,7 @@ Rails.application.routes.draw do
           end
         end
 
-        resources :questions, only: [:index, :show, :create, :update, :destroy] do
+        resources :questions, only: [:index, :show] do
           collection do
             get :random             # GET /questions/random
           end
@@ -39,10 +39,8 @@ Rails.application.routes.draw do
           end
         end
 
-        # Respostas do Usuário
         resources :user_answers, only: [:create, :update]
 
-        # Desempenho do Usuário (geral)
         resources :user_performances, only: [:index, :show]
 
       end
