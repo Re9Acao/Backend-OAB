@@ -3,7 +3,7 @@ module Api
     class UsersController <   ApplicationController
       before_action :authenticate_user!
 
-      # before_action :authorize_admin!, only: [:index, :destroy]
+      before_action :authorize_admin!, only: [:index, :destroy]
 
       def index
         Rails.logger.info "Headers recebidos: #{request.headers.to_h.select { |k,_| k.start_with?('HTTP_') || k == 'Authorization' }}"
