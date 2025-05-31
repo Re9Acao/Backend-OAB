@@ -24,4 +24,8 @@ class User < ApplicationRecord
       self.allow_password_change = true
     end
   end
+
+  def admin?
+    role == "admin"
+  end
 end

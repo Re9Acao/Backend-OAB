@@ -6,6 +6,12 @@ Rails.application.routes.draw do
       }
 
       defaults format: :json do
+        resources :users, only: [:index, :show, :update, :destroy] do
+          member do
+            get :performance        # GET /users/:id/performance
+          end
+        end
+        
         resources :evaluations, only: [:index, :show, :create] do
           member do
             post :submit_answers     # POST /evaluations/:id/submit_answers
@@ -33,11 +39,7 @@ Rails.application.routes.draw do
           end
         end
 
-        resources :users, only: [:index, :show, :update, :destroy] do
-          member do
-            get :performance        # GET /users/:id/performance
-          end
-        end
+        
 
         resources :user_answers, only: [:create, :update]
 
