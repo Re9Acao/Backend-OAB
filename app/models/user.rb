@@ -14,18 +14,12 @@ class User < ApplicationRecord
     premium: 2
   }, _default: :admin
 
-
-   before_update :allow_password_change_for_admin
+  before_update :allow_password_change_for_admin
 
   private
-
   def allow_password_change_for_admin
-    if admin?
+    if role == 'admin'
       self.allow_password_change = true
     end
-  end
-
-  def admin?
-    role == "admin"
   end
 end

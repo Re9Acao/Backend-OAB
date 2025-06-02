@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
-  namespace :api do
-    namespace :v1 do
+
       mount_devise_token_auth_for 'User', at: 'auth', controllers: {
-        registrations: 'api/v1/registrations'
+        registrations: 'registrations'
       }
 
       defaults format: :json do
@@ -11,7 +10,20 @@ Rails.application.routes.draw do
             get :performance        # GET /users/:id/performance
           end
         end
-        
+
+        resources :questions, only: [:index, :show, :create, :update, :destroy] do
+          collection do
+            get :random             
+          end
+        end
+
+        resources :law_areas, only: [:index, :show, :create, :destroy, :update] do
+          member do
+            get :questions          # GET /law_areas/:id/questions (questões por área)
+            get :performance        # GET /law_areas/:id/performance (desempenho por área)
+          end
+        end
+
         resources :evaluations, only: [:index, :show, :create] do
           member do
             post :submit_answers     # POST /evaluations/:id/submit_answers
@@ -25,27 +37,12 @@ Rails.application.routes.draw do
           end
         end
 
-
-        resources :law_areas, only: [:index, :show] do
-          member do
-            get :questions          # GET /law_areas/:id/questions (questões por área)
-            get :performance        # GET /law_areas/:id/performance (desempenho por área)
-          end
-        end
-
-        resources :questions, only: [:index, :show] do
-          collection do
-            get :random             # GET /questions/random
-          end
-        end
-
-        
-
         resources :user_answers, only: [:create, :update]
 
+        # Desempenho do Usuário (geral)
         resources :user_performances, only: [:index, :show]
 
       end
-    end
-  end
+
 end
+
